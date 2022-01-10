@@ -23,6 +23,7 @@ class Market extends Component {
       parseInt(this.state.price),
       parseInt(this.state.quantity)
     );
+    this.setState({ name: "", price: 0, quantity: 0 });
   };
   render() {
     return (
