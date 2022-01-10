@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Item from "./Item";
+import { observer } from "mobx-react";
 
-export default class Market extends Component {
+class Market extends Component {
   constructor() {
     super();
     this.state = { name: "", price: 0, quantity: 0 };
@@ -54,9 +55,11 @@ export default class Market extends Component {
             name={l.name}
             price={l.price}
             quantity={l.quantity}
+            store={this.props.store}
           />
         ))}
       </div>
     );
   }
 }
+export default observer(Market);
