@@ -11,7 +11,6 @@ class App extends Component {
     };
   }
   render() {
-    console.log(this.props.store.items[0].name);
     return (
       <div>
         <Market store={this.props.store} />
