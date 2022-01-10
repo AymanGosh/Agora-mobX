@@ -15,32 +15,32 @@ export class Inventory {
     });
   }
   addItem = (name, price = 0, quantity = 1) => {
-    let item = this.list.find((i) => i.name === name);
+    let item = this.items.find((i) => i.name === name);
     if (item) {
       item.quantity += 1;
     } else {
       let newItem = new Item("corn", price, quantity);
-      this.list.push(newItem);
+      this.items.push(newItem);
     }
   };
   buyItem = (name) => {
-    let item = this.list.find((i) => i.name === name);
+    let item = this.items.find((i) => i.name === name);
     if (item) {
       item.quantity -= 1;
       if (item.quantity < 1) {
-        this.list = this.list.filter((i) => i.name != item.name);
+        this.items = this.items.filter((i) => i.name != item.name);
       }
     }
   };
   changingPrice = (name, price) => {
-    let item = this.list.find((i) => i.name === name);
+    let item = this.items.find((i) => i.name === name);
     if (item) {
       item.price = price;
     }
   };
 
   checkItem = (name) => {
-    let item = this.list.find((i) => i.name === name);
+    let item = this.items.find((i) => i.name === name);
     item.completed = !item.completed;
   };
 }
