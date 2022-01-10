@@ -1,14 +1,15 @@
 import { observable, makeObservable } from "mobx";
 
 export class Item {
-  constructor(name) {
+  constructor(name, price, quantity) {
     this.name = name;
-    this.completed = false;
-    this.location = "Super Sell";
+    this.price = price;
+    this.quantity = quantity;
 
     makeObservable(this, {
       name: observable,
-      completed: observable,
+      price: observable,
+      quantity: observable,
     });
   }
 }
