@@ -19,7 +19,7 @@ export class Inventory {
     if (item) {
       item.quantity += 1;
     } else {
-      let newItem = new Item("corn", price, quantity);
+      let newItem = new Item(name, price, quantity);
       this.items.push(newItem);
     }
   };

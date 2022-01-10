@@ -17,11 +17,11 @@ class Market extends Component {
       this.setState({ quantity: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  addItem = (event) => {
     this.props.store.addItem(
       this.state.name,
-      this.state.price,
-      this.state.quantity
+      parseInt(this.state.price),
+      parseInt(this.state.quantity)
     );
   };
   render() {
@@ -48,7 +48,7 @@ class Market extends Component {
           value={this.state.quantity}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit}>Add</button>
+        <button onClick={this.addItem}>Add</button>
         {this.props.store.items.map((l, index) => (
           <Item
             key={index}

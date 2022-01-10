@@ -4,21 +4,23 @@ class Item extends Component {
   constructor() {
     super();
   }
-  handleClick = (e) => {
+  changingPrice = (e) => {
     if (e.detail === 2) {
       console.log("double click");
       const newPrice = prompt("enter your new price");
-
       this.props.store.changingPrice(this.props.name, newPrice);
     }
+  };
+  buyItem = () => {
+    this.props.store.buyItem(this.props.name);
   };
   render() {
     return (
       <div>
         <p>
           {this.props.quantity} {this.props.name} available at $
-          <span onClick={this.handleClick}>{this.props.price}</span> per item
-          <button>Buy now</button>
+          <span onClick={this.changingPrice}>{this.props.price}</span> per item
+          <button onClick={this.buyItem}>Buy now</button>
         </p>
       </div>
     );
