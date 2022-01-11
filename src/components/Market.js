@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Item from "./Item";
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 
 class Market extends Component {
   constructor() {
@@ -28,6 +28,7 @@ class Market extends Component {
   render() {
     return (
       <div>
+        <h3>You Have {this.props.store.numItems} Items </h3>
         Name:
         <input
           type="text"
@@ -56,11 +57,10 @@ class Market extends Component {
             name={l.name}
             price={l.price}
             quantity={l.quantity}
-            store={this.props.store}
           />
         ))}
       </div>
     );
   }
 }
-export default observer(Market);
+export default inject("store")(observer(Market));

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
+
 class Item extends Component {
   constructor() {
     super();
@@ -26,4 +27,5 @@ class Item extends Component {
     );
   }
 }
-export default observer(Item);
+
+export default inject("store")(observer(Item));

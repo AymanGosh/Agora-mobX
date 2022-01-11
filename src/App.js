@@ -4,18 +4,12 @@ import "./App.css";
 import Market from "./components/Market";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      newItem: "",
-    };
-  }
   render() {
     return (
       <div>
-        <Market store={this.props.store} />
+        <Market />
       </div>
     );
   }
 }
-export default observer(App);
+export default App;

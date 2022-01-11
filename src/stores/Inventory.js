@@ -1,18 +1,20 @@
-import { observable, action, makeObservable } from "mobx";
+import { observable, action, makeObservable, computed } from "mobx";
 import { Item } from "./Item";
 
 export class Inventory {
   constructor() {
     this.items = [];
-    this.length = 0;
 
     makeObservable(this, {
       items: observable,
-      length: observable,
+      numItems: computed,
       addItem: action,
       buyItem: action,
       changingPrice: action,
     });
+  }
+  get numItems() {
+    return this.items.length;
   }
   addItem = (name, price = 0, quantity = 1) => {
     let item = this.items.find((i) => i.name === name);
