@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+What’s an Agora you say? 
+Well, as Wikipedia tells us, in ancient Greece “the Agora served as a marketplace where merchants kept stalls or shops to sell their goods amid colonnades.”
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In layman’s terms, I’ll be building a simple shop using React and MobX. As the Agora manager,
+you’ll be able to
 
-## Available Scripts
+Add new products
 
-In the project directory, you can run:
+Set their price
 
-### `npm start`
+Sell the products
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Track the number of items in your store
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+No need for agora phobia, let’s get started!
 
-### `npm test`
+COMPONENT AND STORE OVERVIEW
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note: “store” refers to the place where will be storing all of your data and data related functions. 
+“Agora” refers to the project .
 
-### `npm run build`
+The App will consist of two react components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A Market Component, where you can input new items and see each of the Items in your Agora
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+An Item Component, which will be a child of the Market component and will render the information of a single item, as well as a buy button
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There is one main store, Inventory it have:
 
-### `npm run eject`
+An array of items
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Methods for
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+adding an item to the store
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+buying an item
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+changing the price
 
-## Learn More
+With tracker to the store to see how many Items are in our store at all times. 
+Using a Provider to Inject the relevant parts of our store into our app where we need it.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
